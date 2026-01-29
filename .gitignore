@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Editor and IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Optional: keep Cursor project skill as local override only (uncomment if you want to ignore it in the repo)
+# .cursor/skills/flare-fassets-skill/
