@@ -19,10 +19,10 @@ The agent uses this skill when you work with FAssets, FXRP, FBTC, minting/redemp
 Install this skill with a single command:
 
 ```bash
-npx skills add https://github.com/fasssko/fassets-skill --skill flare-fassets-skill
+npx skills add https://github.com/fassko/fassets-skill --skill flare-fassets-skill
 ```
 
-For more information, visit the [skills.sh platform page](https://skills.sh/fasssko/fassets-skill/flare-fassets-skill).
+For more information, visit the [skills.sh platform page](https://skills.sh/fassko/fassets-skill/flare-fassets-skill).
 
 Then use the skill in your AI agent, for example:
 
@@ -38,7 +38,7 @@ To install this Skill for your personal use in Claude Code:
 
 1. Add the marketplace:
    ```
-   /plugin marketplace add fasssko/fassets-skill
+   /plugin marketplace add fassko/fassets-skill
    ```
 2. Install the Skill:
    ```
@@ -58,7 +58,7 @@ To automatically provide this Skill to everyone working in a repository, configu
     "flare-fassets-skill": {
       "source": {
         "source": "github",
-        "repo": "fasssko/fassets-skill"
+        "repo": "fassko/fassets-skill"
       }
     }
   }
@@ -107,7 +107,7 @@ Only the **`flare-fassets-skill`** folder (with `SKILL.md` and `reference.md`) n
 
 ## Links
 
-- [Install via skills.sh](https://skills.sh/fasssko/fassets-skill/flare-fassets-skill) — one-command install for Cursor, Claude Code, Codex, and more  
+- [Install via skills.sh](https://skills.sh/fassko/fassets-skill/flare-fassets-skill) — one-command install for Cursor, Claude Code, Codex, and more  
 - [Flare FAssets Overview](https://dev.flare.network/fassets/overview/)  
 - [Flare Developer Hub](https://dev.flare.network/)  
 - [Flare Network](https://flare.network/)  
