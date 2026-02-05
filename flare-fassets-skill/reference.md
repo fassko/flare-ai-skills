@@ -46,6 +46,10 @@ Use these when you need detailed specs, contract ABIs, or step-by-step developer
 - [Agent Bot CLI](https://dev.flare.network/fassets/reference/agent-bot)
 - [User Bot CLI](https://dev.flare.network/fassets/reference/user-bot)
 
+## Smart Accounts
+
+- [Flare Smart Accounts](https://dev.flare.network/smart-accounts/overview) — Account abstraction for XRPL users to interact with FAssets on Flare without owning FLR
+
 ## Supporting Protocols
 
 - [FTSO Overview](https://dev.flare.network/ftso/overview)
