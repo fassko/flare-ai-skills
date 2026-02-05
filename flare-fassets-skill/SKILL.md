@@ -80,6 +80,28 @@ Request redemption (burn FAssets on Flare); the chosen agent pays out the underl
 - **Backing factor:** Minimum collateral ratio agents must maintain.
 - **CRF:** Collateral Reservation Fee. **UBA:** Smallest unit of the underlying asset (e.g. drops for XRP).
 
+## Flare Smart Accounts
+
+**Flare Smart Accounts** let XRPL users interact with FAssets on Flare **without owning any FLR**. Each XRPL address is assigned a unique smart account on Flare that only it can control.
+
+**How it works:**
+1. User sends a Payment transaction on the XRPL to a designated address, encoding instructions in the memo field as a payment reference.
+2. An operator monitors incoming XRPL transactions and requests a Payment attestation from the FDC.
+3. The operator calls `executeTransaction` on the `MasterAccountController` contract on Flare, passing the proof and the user's XRPL address.
+4. The contract verifies the proof, retrieves (or creates) the user's smart account, decodes the payment reference, and executes the requested action.
+
+**Supported instruction types (first nibble of payment reference):**
+
+| Type ID | Target |
+|---------|--------|
+| `0` | FXRP token interactions |
+| `1` | Firelight vault (stXRP) |
+| `2` | Upshift vault |
+
+This means XRPL users can mint/redeem FXRP, stake into Firelight, or interact with Upshift — all from a single XRPL Payment transaction.
+
+**Guide:** [Flare Smart Accounts](https://dev.flare.network/smart-accounts/overview)
+
 ## Minting dApps and Wallets
 
 - Minting dApps: [Oracle Daemon](https://fasset.oracle-daemon.com/flare), [AU](https://fassets.au.cc)

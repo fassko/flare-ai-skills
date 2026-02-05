@@ -96,7 +96,9 @@ fassets-skill/
 ├── .gitignore
 └── flare-fassets-skill/   # The skill to copy into your agent's skills path
     ├── SKILL.md           # Main skill instructions
-    └── reference.md       # Flare Developer Hub links
+    ├── reference.md       # Flare Developer Hub links
+    └── scripts/
+        └── get-fxrp-address.ts  # Utility: get FXRP address at runtime
 ```
 
 Only the **`flare-fassets-skill`** folder (with `SKILL.md` and `reference.md`) needs to live inside the tool's skills path.
