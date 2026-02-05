@@ -26,6 +26,7 @@ Use these when you need detailed specs, contract ABIs, or step-by-step developer
 - [Redemption Queue](https://dev.flare.network/fassets/developer-guides/fassets-redemption-queue)
 - [FAsset Auto-Redeem](https://dev.flare.network/fassets/developer-guides/fassets-autoredeem)
 - [Get FXRP Token Address](https://dev.flare.network/fxrp/token-interactions/fxrp-address)
+- **Skill script:** [scripts/get-fxrp-address.ts](scripts/get-fxrp-address.ts) — get FXRP address at runtime (FlareContractsRegistry → AssetManagerFXRP → fAsset())
 - [Swap USDT0 to FXRP](https://dev.flare.network/fxrp/token-interactions/usdt0-fxrp-swap)
 - [List FAssets Agents](https://dev.flare.network/fassets/developer-guides/fassets-list-agents)
 - [Read FAssets Agent Details](https://dev.flare.network/fassets/developer-guides/fassets-agent-details)
