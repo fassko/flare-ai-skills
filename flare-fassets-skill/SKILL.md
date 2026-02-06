@@ -47,13 +47,13 @@ Per-asset vault that improves capital efficiency: agents can deposit underlying 
 
 **Do not hardcode** AssetManagerController, AssetManager, or FXRP addresses. They differ per network (Coston2, Songbird, Flare mainnet). Resolve them at runtime via the registry.
 
-**To get the FXRP address:**
-   1. Call `getContractAddressByName("AssetManagerFXRP")` on the **FlareContractsRegistry** to get the AssetManager address.
-   2. Call **`fAsset()`** on that AssetManager to get the FXRP ERC-20 token address.
+**To get the FXRP address (no SDK required — just an RPC provider):**
+   1. Call the `getContractAddressByName("AssetManagerFXRP")` **view function** on the FlareContractsRegistry contract (`0xaD67...`) to get the AssetManager address.
+   2. Call the `fAsset()` **view function** on that AssetManager contract to get the FXRP ERC-20 token address.
 
-Same pattern for other FAssets (e.g. `"AssetManagerFBTC"` for FBTC). **AssetManagerController** is also available from the registry when needed.
+Same pattern for other FAssets (e.g. `"AssetManagerFBTC"` for FBTC). **AssetManagerController** is also available from the registry when needed. These are on-chain view calls — any EVM-compatible library or raw JSON-RPC works.
 
-**Guide:** [Get FXRP Address](https://dev.flare.network/fxrp/token-interactions/fxrp-address) — e.g. `const assetManager = await getAssetManagerFXRP(); const fasset = await assetManager.fAsset();`
+**Guide:** [Get FXRP Address](https://dev.flare.network/fxrp/token-interactions/fxrp-address)
 
 **Skill resource script:** [scripts/get-fxrp-address.ts](scripts/get-fxrp-address.ts) — gets FXRP address at runtime via FlareContractsRegistry → `getContractAddressByName("AssetManagerFXRP")` → `fAsset()`. Uses ethers; set `FLARE_RPC_URL` or pass your network RPC. Run with `npx ts-node scripts/get-fxrp-address.ts` (or in a Hardhat project with `yarn hardhat run scripts/get-fxrp-address.ts --network coston2`).
 
