@@ -5,6 +5,7 @@ Use these when you need detailed specs, contract ABIs, or step-by-step developer
 ## Overview and Concepts
 
 - [FAssets Overview](https://dev.flare.network/fassets/overview/) — System summary, workflow, participants, Core Vault
+- [FXRP Overview](https://dev.flare.network/fxrp/overview) — FXRP architecture, mint/redeem paths, and usage options on Flare
 - [FAssets Minting](https://dev.flare.network/fassets/minting) — Minting flow, fees, payment deadlines, failure handling
 - [FAssets Redemption](https://dev.flare.network/fassets/redemption) — Redemption flow
 - [FAssets Collateral](https://dev.flare.network/fassets/collateral) — Collateral types and rules

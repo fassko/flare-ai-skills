@@ -15,6 +15,23 @@ FAssets is a **trustless, over-collateralized bridge** connecting non–smart-co
 
 **Collateral:** Stablecoin and native FLR; agents and a community collateral pool provide over-collateralization.
 
+## FXRP at a Glance
+
+FXRP is the ERC-20 representation of XRP on Flare, powered by the FAssets system. It is designed to be trustless and redeemable back to XRP.
+
+**Key points:**
+- **EVM-compatible token:** Works with standard wallets, smart contracts, and DeFi apps on Flare.
+- **Trust-minimized bridge flow:** Uses FDC attestations for XRPL payment verification.
+- **Redeemable:** FXRP can be redeemed for native XRP through the FAssets redemption flow.
+- **DeFi + yield use cases:** Can be used in lending/liquidity strategies and vault-based products like Firelight.
+
+**How users acquire FXRP:**
+1. Mint from XRP using a minting dApp.
+2. Mint programmatically via AssetManager flows.
+3. Swap from other tokens on Flare DEXs.
+
+**Guide:** [FXRP Overview](https://dev.flare.network/fxrp/overview)
+
 ## Key Participants
 
 | Role | Responsibility |
@@ -48,9 +65,9 @@ Per-asset vault that improves capital efficiency: agents can deposit underlying 
 **Do not hardcode** AssetManagerController, AssetManager, or FXRP addresses. They differ per network (Coston2, Songbird, Flare mainnet). Resolve them at runtime via the registry.
 
 **To get the FXRP address:**
-   1. Get the **AssetManager** from the **FlareContractsRegistry**
-   2. Get **AssetManagerFXRP** from that
-   3. Call **`fAsset()`** on the AssetManager to get the FXRP ERC-20 token address. Same pattern for other FAssets (FBTC, etc.) using their AssetManager getters. **AssetManagerController** is also available from the registry when needed.
+   1. Query the **FlareContractsRegistry** with `getContractAddressByName("AssetManagerFXRP")` — the returned address **is** the AssetManager (FXRP) contract address.
+   2. Attach the **IAssetManager** interface to that address (or use it as your AssetManager instance).
+   3. Call **`fAsset()`** on the AssetManager to get the FXRP ERC-20 token address. Same pattern for other FAssets (FBTC, etc.) using their corresponding registry keys. **AssetManagerController** is also available from the registry when needed.
 
 **Guide:** [Get FXRP Address](https://dev.flare.network/fxrp/token-interactions/fxrp-address) — e.g. `const assetManager = await getAssetManagerFXRP(); const fasset = await assetManager.fAsset();`
 
